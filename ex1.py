@@ -12,9 +12,8 @@ import time as t
 
 # OPERANDOS
 
-temp1 = 0
-temp2 = 0
-temp3 = 0
+days = 0
+temp = []
 temp_m = 0
 menor_temp = 0
 maior_temp = 0
@@ -23,26 +22,23 @@ temp_in_m = 0
 # ENTRADAS
 
 print('========== TEMPERATURAS DIÁRIAS ==========\n')
-temp1 = float(input('Entre com a 1º temperatuda - '))
-temp2 = float(input('Entre com a 2º temperatuda - '))
-temp3 = float(input('Entre com a 3º temperatuda - '))
+days = int(input('Entre com o número de dias: '))
+print('Entre com uma temperatura entre 15 e 40 graus.')
+for i in range(days):
+    temp = float(input(f'Entre com {i + 1}° temperatura - '))
+    if temp >= 15 and temp <= 40:
+        continue
+    else:
+        print('Entre com uma temperatura valida!')
+        continue
 
 # PROCESSAMENTO
 
-menor_temp = min(temp1, temp2, temp3)
-maior_temp = max(temp1, temp2, temp3)
-temp_m = (temp1 + temp2 + temp3) / 3
-if temp1 < temp_m:
-  temp_in_m += 1
-if temp2 < temp_m:
-  temp_in_m += 1
-if temp3 < temp_m:
-  temp_in_m += 1
+menor_temp = min(temp)
 
 # SAIDA
 
-t.sleep(1)
-print('\n============= RESULTADO ===============\n')
+print('============= RESULTADO ===============')
 print(f'Menor temperatura - {menor_temp}°.')
 print(f'Maior temperatura - {maior_temp}°.')
 print(f'Temperatura média - {temp_m:.2f}°.')
