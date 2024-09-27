@@ -12,34 +12,36 @@ import time as t
 
 # OPERANDOS
 
-days = 0
-temp = []
+temp_s = []
+temp = 0
 temp_m = 0
-menor_temp = 0
-maior_temp = 0
-temp_in_m = 0
+inf_m = []
 
-# ENTRADAS
+# ENTRADA
 
 print('========== TEMPERATURAS DIÁRIAS ==========\n')
-days = int(input('Entre com o número de dias: '))
-print('Entre com uma temperatura entre 15 e 40 graus.')
-for i in range(days):
-    temp = float(input(f'Entre com {i + 1}° temperatura - '))
-    if temp >= 15 and temp <= 40:
-        continue
-    else:
-        print('Entre com uma temperatura valida!')
-        continue
+for i in range(10):
+    while True:
+        temp = (int(input(f'Entre com a {i+1}º temperatura - ')))
+        if 15 <= temp <= 40:
+            temp_s.append(temp)
+            break
+        else:
+            print('Erro, Tente novamente!')
+
 
 # PROCESSAMENTO
 
-menor_temp = min(temp)
+temp_m = sum(temp_s) / len(temp_s)
+for temp in temp_s:
+    if temp < temp_m:
+        inf_m = len(temp_s)
 
 # SAIDA
 
-print('============= RESULTADO ===============')
-print(f'Menor temperatura - {menor_temp}°.')
-print(f'Maior temperatura - {maior_temp}°.')
-print(f'Temperatura média - {temp_m:.2f}°.')
-print(f'Dias que a temperatura foi inferior a média - {temp_in_m}.')
+t.sleep(1)
+print('\n============= Resultado =================\n')
+print(f'Maior temperatura - {max(temp_s)}°')
+print(f'Menor temperatura - {min(temp_s)}°')
+print(f'Temperatura média - {temp_m}°')
+print(f'Dias com temperatura inferior a média - {inf_m}')
