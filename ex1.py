@@ -15,7 +15,7 @@ import time as t
 temp_s = []
 temp = 0
 temp_m = 0
-inf_m = []
+inf_m = 0
 
 # ENTRADA
 
@@ -35,13 +35,13 @@ for i in range(10):
 temp_m = sum(temp_s) / len(temp_s)
 for temp in temp_s:
     if temp < temp_m:
-        inf_m = len(temp_s)
+        inf_m += 1
 
 # SAIDA
 
 t.sleep(1)
 print('\n============= Resultado =================\n')
-print(f'Maior temperatura - {max(temp_s)}°')
-print(f'Menor temperatura - {min(temp_s)}°')
-print(f'Temperatura média - {temp_m}°')
-print(f'Dias com temperatura inferior a média - {inf_m}')
+print(f'Maior temperatura -: {max(temp_s)}°')
+print(f'Menor temperatura -: {min(temp_s)}°')
+print(f'Temperatura média -: {temp_m}°')
+print(f'Dias com temperatura inferior a média -: {inf_m}')
