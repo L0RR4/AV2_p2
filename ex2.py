@@ -24,13 +24,16 @@ assento = 0
 # ENTRADA
 
 print('======= SISTEMA DE RESERVA =======\n')
+t.sleep(1)
 while True:
 
   if bus == {}:
     break
   t.sleep(1)
-  print(f'Assentos disponiveis - {list(bus.keys())}\n')
+  print(f'Assentos disponiveis - {list(bus.keys())} (0 para sair)\n')
   assento = int(input('Qual assento deseja reservar? '))
+  if assento == 0:
+    break
   print('-'*40)
 
 # PROCESSAMENTO
