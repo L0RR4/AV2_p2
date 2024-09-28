@@ -59,19 +59,20 @@ while True:
         break
     else:
         print('Numero invalido.')
-    dick = len(animal_sorteado)
-    print('--------------- Lets start ---------------')
-    print(f'Dica: O animal tem {dick} letras.')
-    palpite = input('Tente adivinhar a palavra: ')
-    if palpite == animal_sorteado:
-        list_palpites.append(palpite)
-        print('Parabéns! Você acertou a palavra.')
-        break
-    else:
-        list_palpites.append(palpite)
-        print('Palpite incorreto.')
-        print('Tente novamente.')
-        
+    while True:
+        dick = len(animal_sorteado)
+        print('--------------- Lets start ---------------')
+        print(f'Dica: O animal tem {dick} letras.')
+        palpite = input('Tente adivinhar a palavra: ').lower()
+        if palpite == animal_sorteado:
+            list_palpites.append(palpite)
+            print('Parabéns! Você acertou a palavra.')
+            break
+        else:
+            list_palpites.append(palpite)
+            print('Palpite incorreto.')
+            print('Tente novamente.')
+    break
 
 # SAIDA
 
