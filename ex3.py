@@ -22,19 +22,21 @@ def adicionar_funcionarios(funcionarios):
 def listar_funcionarios(funcionarios):
     for fun in funcionarios:
          print(f"{fun['nome']}: {fun['idade']} anos. Cargo: {fun['cargo']}")
+    if funcionarios == []:
+        print('Nenhum funciorario encontrado!\n')
+            
 
 def buscar_por_cargo(funcionarios, cargo_busca):
-    funcionarios_encontrados =[]
+    funcionarios_encontrados = []
     cargo_busca = input('Digite o cargo que deseja buscar: ').lower()
     for f in funcionarios:
         if f['cargo'] == cargo_busca:
             funcionarios_encontrados.append(f)
-        if not funcionarios_encontrados:
-            print(f'Não há funcionarios com o cargo {cargo_busca}.')
-        else:
             print(f'Funcionarios com o cargo {cargo_busca:}')
-            for f in funcionarios_encontrados:
-                print(f"Nome: {f['nome']} - Idade: {f['idade']}.")
+            for f_e in funcionarios_encontrados:
+                print(f"Nome: {f_e['nome']} - Idade: {f_e['idade']}.")
+    if cargo_busca not in funcionarios:
+        print(f'Não há funcionarios com o cargo {cargo_busca}.')
     return funcionarios_encontrados
 
 # OPERANDOS
@@ -49,6 +51,7 @@ cargo_busca = ''
 
 while True:
     print('======= SISTEMA DE CADASTRO DE FUNCIONÁRIOS =======\n')
+    t.sleep(1)
     print('Escolha uma opção:')
     print('1 - Cadrastar funcionario.')
     print('2 - Listar funcionarios.')
