@@ -32,7 +32,6 @@ def concluir_tarefa(lista_tarefas):
     else:
         print('ID invalido')
 
-
 # OPERANDOS
 
 descrições = ''
@@ -50,6 +49,9 @@ while True:
     print('3 - Concluir tarefa.')
     print('4- Sair.')
     opcao = int(input('Opção: '))
+   
+# PROCESSAMENTO
+
     if opcao == 1:
         adicionar_tarefa(lista_tarefas)
     elif opcao == 2:
@@ -60,10 +62,6 @@ while True:
         break
     else:
         print('Opção invalida.')
-
-# PROCESSAMENTO
-
-
 
 # SAIDA
 
