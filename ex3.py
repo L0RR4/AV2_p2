@@ -25,18 +25,17 @@ def listar_funcionarios(funcionarios):
     if funcionarios == []:
         print('Nenhum funciorario encontrado!\n')
             
-
 def buscar_por_cargo(funcionarios, cargo_busca):
     funcionarios_encontrados = []
     cargo_busca = input('Digite o cargo que deseja buscar: ').lower()
     for f in funcionarios:
         if f['cargo'] == cargo_busca:
             funcionarios_encontrados.append(f)
-            print(f'Funcionarios com o cargo {cargo_busca:}')
-            for f_e in funcionarios_encontrados:
-                print(f"Nome: {f_e['nome']} - Idade: {f_e['idade']}.")
-    if cargo_busca not in funcionarios:
-        print(f'Não há funcionarios com o cargo {cargo_busca}.')
+    print(f'Funcionarios com o cargo {cargo_busca:}')
+    if funcionarios_encontrados == []:
+        print('Nenhum funcionário encontrado.')
+    for f_e in funcionarios_encontrados:
+        print(f"Nome: {f_e['nome']} - Idade: {f_e['idade']}.")
     return funcionarios_encontrados
 
 # OPERANDOS
@@ -71,8 +70,6 @@ while True:
         break
     else:
         print('Digite uma opção valida!')
-        
-
 
 # SAIDA
 
